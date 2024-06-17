@@ -192,7 +192,7 @@ function fadeInIcons() {
 function resetFadeOutTimeout() {
     clearTimeout(fadeOutTimeout);
     fadeInIcons();
-    fadeOutTimeout = setTimeout(fadeOutIcons, 5000);
+    fadeOutTimeout = setTimeout(fadeOutIcons, 8000);
 }
 
 document.getElementById('upload').addEventListener('change', handleUpload);
