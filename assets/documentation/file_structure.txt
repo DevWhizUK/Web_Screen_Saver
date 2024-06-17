@@ -1,0 +1,46 @@
+root/
+│
+├── public/
+│   ├── assets/
+│   │   ├── images/ - Stores all image files
+│   │   │   ├── logos/ - Stores logo images
+│   │   │   ├── icons/ - Stores icon images
+│   │   │   └── ... - Additional image folders
+│   │   ├── fonts/ - Stores font files
+│   │   │   ├── custom/ - Custom fonts
+│   │   │   └── webfonts/ - Web fonts
+│   │   ├── videos/ - Stores video files
+│   │   ├── audio/ - Stores audio files
+│   │   └── documents/ - Stores document files
+│   ├── css/ - Stores CSS files
+│   ├── js/ - Stores JavaScript files
+│   └── ... - Additional public folders
+│
+├── src/
+│   ├── controllers/ - Stores controller files
+│   ├── models/ - Stores model files
+│   ├── views/ - Stores view files
+│   │   ├── layouts/ - Layout files for views
+│   │   ├── partials/ - Partial view files
+│   │   │   ├── header/ - Header partials
+│   │   │   ├── footer/ - Footer partials
+│   │   │   └── ... - Additional partials
+│   │   └── pages/ - Page view files
+│   ├── styles/ - Stores style files
+│   │   ├── base/ - Base styles
+│   │   ├── components/ - Component styles
+│   │   ├── layouts/ - Layout styles
+│   │   └── pages/ - Page-specific styles
+│   ├── utils/ - Utility functions
+│   ├── services/ - Service files
+│   └── ... - Additional source folders
+│
+├── assets/
+│   ├── database/ - Database files
+│   └── documentation/ - Documentation files
+│       ├── file_structure.txt - Overview of the file structure
+│       └── ... - Additional documentation
+│
+├── scripts/ - Stores scripts
+│
+└── ... - Additional root folders
