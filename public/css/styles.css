@@ -1,0 +1,230 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    height: 90%;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.8); /* Black with transparency */
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.upload-icon, .fullscreen-icon, .settings-icon, .info-icon {
+    position: absolute;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.upload-icon {
+    top: 10px;
+    left: 10px;
+}
+
+.fullscreen-icon {
+    top: 10px;
+    right: 10px;
+}
+
+.settings-icon {
+    bottom: 10px;
+    left: 10px;
+}
+
+.info-icon {
+    bottom: 10px;
+    right: 10px;
+}
+
+.upload-icon input {
+    display: none;
+}
+
+.upload-icon label, .fullscreen-icon label, .settings-icon label, .info-icon label {
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+.clock {
+    font-size: 15vw;
+    color: white;
+    text-align: center;
+    transition: opacity 0.3s, color 0.3s, font-size 0.3s;
+}
+
+.settings-popup {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    color: white;
+    width: 300px;
+}
+
+.settings-popup h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    text-align: center;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.settings-popup label, .settings-popup select, .settings-popup input {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 1em;
+}
+
+.settings-popup select, .settings-popup input {
+    background-color: #333;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.settings-popup input[type="range"] {
+    appearance: none;
+    height: 5px;
+    background: #666;
+    outline: none;
+    border-radius: 5px;
+}
+
+.settings-popup input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+}
+
+.settings-popup button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.settings-popup button:hover {
+    background-color: #0056b3;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #007bff;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+#tooltip-upload {
+    top: 40px;
+    left: 10px;
+}
+
+#tooltip-fullscreen {
+    top: 40px;
+    right: 10px;
+}
+
+#tooltip-settings {
+    bottom: 40px;
+    left: 10px;
+}
+
+#tooltip-info {
+    bottom: 40px;
+    right: 10px;
+}
+
+@media (max-width: 768px) {
+    .clock {
+        font-size: 20vw;
+    }
+}

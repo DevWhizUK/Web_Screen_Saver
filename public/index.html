@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScreenSaver</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arial&family=Courier+New&family=Georgia&family=Times+New+Roman&family=Verdana&family=Roboto:wght@100;300;400;500;700&family=Open+Sans:wght@300;400;600;700&family=Lato:wght@100;300;400;700&family=Montserrat:wght@100;300;400;700&family=Oswald:wght@300;400;500;700&family=Raleway:wght@100;300;400;500;700&family=VT323&display=swap');
+        @font-face {
+            font-family: 'DS-Digital';
+            src: url('fonts/ds-digital.ttf') format('truetype');
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="upload-icon" id="upload-icon">
+            <input type="file" id="upload" accept="image/*">
+            <label for="upload">📁</label>
+        </div>
+        <div class="fullscreen-icon" id="fullscreen-icon">
+            <label for="fullscreen">⛶</label>
+        </div>
+        <div class="settings-icon" id="settings-icon">
+            <label for="settings">⚙️</label>
+        </div>
+        <div class="info-icon" id="info-icon">
+            <label for="info">ℹ️</label>
+        </div>
+        <div class="clock" id="clock"></div>
+        <div class="tooltip" id="tooltip-upload">Upload an image to set as the background.</div>
+        <div class="tooltip" id="tooltip-fullscreen">Toggle fullscreen mode.</div>
+        <div class="tooltip" id="tooltip-settings">Open settings to customize the clock.</div>
+        <div class="tooltip" id="tooltip-info">Hover over icons to see what they do.</div>
+    </div>
+    <div class="settings-popup" id="settings-popup">
+        <h2>Settings</h2>
+        <label for="font-select">Choose Font:</label>
+        <select id="font-select">
+            <option value="Arial" style="font-family: Arial;">Arial</option>
+            <option value="Courier New" style="font-family: 'Courier New';">Courier New</option>
+            <option value="Georgia" style="font-family: Georgia;">Georgia</option>
+            <option value="Times New Roman" style="font-family: 'Times New Roman';">Times New Roman</option>
+            <option value="Verdana" style="font-family: Verdana;">Verdana</option>
+            <option value="Roboto" style="font-family: 'Roboto';">Roboto</option>
+            <option value="Open Sans" style="font-family: 'Open Sans';">Open Sans</option>
+            <option value="Lato" style="font-family: 'Lato';">Lato</option>
+            <option value="Montserrat" style="font-family: 'Montserrat';">Montserrat</option>
+            <option value="Oswald" style="font-family: 'Oswald';">Oswald</option>
+            <option value="Raleway" style="font-family: 'Raleway';">Raleway</option>
+            <option value="DS-Digital" style="font-family: 'DS-Digital';">DS-Digital</option>
+            <option value="VT323" style="font-family: 'VT323';">VT323</option>
+        </select>
+        <label for="transparency-slider">Background Transparency:</label>
+        <input type="range" id="transparency-slider" min="0" max="100" value="80">
+        <label for="clock-transparency-slider">Clock Transparency:</label>
+        <input type="range" id="clock-transparency-slider" min="0" max="100" value="100">
+        <label for="clock-size-slider">Clock Size:</label>
+        <input type="range" id="clock-size-slider" min="10" max="20" value="15">
+        <label for="clock-format">Clock Format:</label>
+        <select id="clock-format">
+            <option value="12hr-seconds">12-hour with seconds</option>
+            <option value="12hr-no-seconds">12-hour without seconds</option>
+            <option value="24hr-seconds">24-hour with seconds</option>
+            <option value="24hr-no-seconds">24-hour without seconds</option>
+        </select>
+        <label for="invert-colors">Invert Colors:</label>
+        <label class="switch">
+            <input type="checkbox" id="invert-colors" onclick="invertColors()">
+            <span class="slider round"></span>
+        </label>
+        <button onclick="closeSettings()">Close</button>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
